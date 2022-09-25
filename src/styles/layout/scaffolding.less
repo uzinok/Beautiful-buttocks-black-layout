@@ -19,3 +19,18 @@ img {
 	overflow: hidden;
 	border: none;
 }
+
+[class$="__wrap"] {
+	position: relative;
+	box-sizing: border-box;
+	max-width: 1200px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-right: 20px;
+	padding-left: 20px;
+
+	@media (min-width: @min-lg) {
+		padding-right: 40px;
+		padding-left: 40px;
+	}
+}
