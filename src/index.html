@@ -17,7 +17,6 @@
 		<!-- overflow -->
 		<div class="overflow">
 			<!-- hero -->
-
 			<section class="hero">
 				<!-- hero__wrap -->
 				<div class="hero__wrap">
@@ -67,9 +66,6 @@
 
 			<!-- about-training -->
 			<section class="about-training">
-				<svg width="1920" height="100" class="about-training__upper" aria-hidden="true" focusable="false">
-					<use xlink:href="#bg-shape"></use>
-				</svg>
 				<!-- about-training__wrap -->
 				<div class="about-training__wrap">
 					<h2 class="about-training__heading"><span class="bright">Что вы узнаете</span> на мастер-классе</h2>
@@ -84,19 +80,26 @@
 					</ul>
 				</div>
 				<!-- ./about-training__wrap -->
+				<!-- <svg width="1920" height="100" class="about-training__downstairs" aria-hidden="true" focusable="false" preserveAspectRatio="none">
+					<use xlink:href="#bg-shape"></use>
+				</svg> -->
+				<div class="about-training__downstairs">
+					{% include 'img/bg-shape.svg' %}
+				</div>
 			</section>
 			<!-- ./about-training -->
 
 			<!-- about -->
-
 			<section class="about">
 				<!-- about__wrap -->
 				<div class="about__wrap">
 					<h2 class="about__heading">Выпады и приседы — <span>прошлый век!</span></h2>
-					<p>Алина Петрова, сертифицированный тренер-скульптор, специализируется на создании идеальных форм.</p>
+					<p class="about__subheading">Алина Петрова, сертифицированный тренер-скульптор, специализируется на создании идеальных форм.</p>
 
 					<!-- about__list -->
-					<div class="about__list"></div>
+					<div class="about__list">
+						<img src="./img/about/certificates.png" alt="Несколько сертификатов Алины Петровой" width="998" height="159">
+					</div>
 					<!-- ./about__list -->
 
 					<p>За свой 10-летний тренерский стаж я поработала в разных фитнес-направлениях, но в последнее время получаю всё больше запросов от своих клиенток на создание красивых упругих ягодиц. И это неудивительно, ведь это так женственно и сексуально!</p>
@@ -105,7 +108,7 @@
 					<p>Больше года путем проб и ошибок я создавала идеальную систему тренировок, которая превзошла все мои ожидания. О ней я и расскажу на своем бесплатном мастер-классе, на который приглашаю всех девушек, мечтающих об идеальных формах.</p>
 
 					<div class="button-wrap">
-						<a href="#form" class="button">
+						<a href="#form" class="about__button button">
 							<span>Зарегистрироваться <span class="button__small">и получить подарок</span></span>
 							<svg width="164" height="159" class="button__apple" aria-hidden="true" focusable="false">
 								<use xlink:href="#small-logo"></use>
@@ -114,6 +117,10 @@
 
 						<p class="number-seats">Осталось мест <span>4</span></p>
 					</div>
+				</div>
+
+				<div class="about__downstairs">
+					{% include 'img/bg-shape.svg' %}
 				</div>
 				<!-- ./about__wrap -->
 			</section>

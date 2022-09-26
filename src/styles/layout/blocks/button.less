@@ -22,6 +22,7 @@
 	0% {
 		background-position: 0 bottom;
 	}
+
 	100% {
 		background-position: 47px bottom;
 	}
@@ -46,9 +47,12 @@
 	border: 0;
 	border-radius: 35px;
 	appearance: none;
-	transition: background-color var(--transition-duration) var(--transition-timing-function);
+	transition: background-color var(--transition-duration) var(--transition-timing-function),
+		box-shadow var(--transition-duration) var(--transition-timing-function);
+	box-shadow: 0 5px 20px #aa8214;
 
 	&:hover {
+		box-shadow: 0 5px 10px #aa8214;
 		background-color: var(--bright-light);
 
 		& .button__apple {
