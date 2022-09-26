@@ -1,0 +1,109 @@
+.about-training {
+	margin-top: -30px;
+	background-color: var(--body);
+
+	@media (min-width: @min-lg) {
+		margin-top: -100px;
+	}
+}
+
+.about-training__wrap {
+	padding-top: 60px;
+	padding-bottom: 20px;
+
+	@media (min-width: @min-lg) {
+		padding-top: 160px;
+	}
+}
+
+.about-training__heading {
+	text-align: center;
+	text-shadow: 0 3px 0 var(--white);
+}
+
+.about-training__list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	gap: 20px;
+
+	@media (min-width: @min-lg) {
+		grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+	}
+}
+
+.about-training__item {
+	padding-right: 5px;
+	padding-left: 5px;
+	font-size: 13px;
+	line-height: 18px;
+	text-align: center;
+
+	@media (min-width: @min-lg) {
+		font-size: 16px;
+		line-height: 24px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	&::before {
+		display: block;
+		width: auto;
+		height: 111px;
+		margin: 0 auto;
+
+		@media (min-width: @min-lg) {
+			height: 159px;
+		}
+	}
+
+	&--heart::before {
+		content: url(../../../img/about-training/heart.png);
+
+		@media (min-width: @min-lg) {
+			content: url(../../../img/about-training/heart@desktop.png);
+		}
+	}
+
+	&--apple::before {
+		content: url(../../../img/about-training/apple.png);
+
+		@media (min-width: @min-lg) {
+			content: url(../../../img/about-training/apple@desktop.png);
+		}
+	}
+
+	&--graph::before {
+		content: url(../../../img/about-training/graph.png);
+
+		@media (min-width: @min-lg) {
+			content: url(../../../img/about-training/graph@desktop.png);
+		}
+	}
+
+	&--diamond::before {
+		content: url(../../../img/about-training/diamond.png);
+
+		@media (min-width: @min-lg) {
+			content: url(../../../img/about-training/diamond@desktop.png);
+		}
+	}
+
+	&--buttocks::before {
+		content: url(../../../img/about-training/buttocks.png);
+
+		@media (min-width: @min-lg) {
+			content: url(../../../img/about-training/buttocks@desktop.png);
+		}
+	}
+
+	&--message::before {
+		content: url(../../../img/about-training/message.png);
+
+		@media (min-width: @min-lg) {
+			content: url(../../../img/about-training/message@desktop.png);
+		}
+	}
+}
