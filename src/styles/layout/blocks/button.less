@@ -12,8 +12,18 @@
 		width: 47px;
 		height: 10px;
 		background-image: url(../../../img/shape-wave.svg);
-		background-repeat: no-repeat;
+		// background-repeat: no-repeat;
 		background-position: center bottom 2px;
+		animation: bg-left 5s linear infinite;
+	}
+}
+
+@keyframes bg-left {
+	0% {
+		background-position: 0 bottom;
+	}
+	100% {
+		background-position: 47px bottom;
 	}
 }
 

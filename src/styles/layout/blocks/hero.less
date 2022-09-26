@@ -9,29 +9,48 @@
 	@media (min-width: 700px) {
 		background-image: url(../../../img/hero/bg-top@desktop.png), url(../../../img/hero/bg-end@desktop.png);
 	}
+}
 
+.hero__wrap {
 	@media (max-width: @max-lg) {
 		&::after {
 			content: url(../../../img/hero/up/alina.png);
 			display: block;
 			width: fit-content;
 			margin: 0 auto;
-			transform: translateX(-66px);
+			transform: translateX(-126px);
 		}
 	}
 
 	@media (min-width: @min-lg) {
-
 		&::before {
 			content: url(../../../img/hero/up/alina@desktop.png);
 			position: absolute;
 			top: 0;
 			right: 50%;
 		}
+		&::after {
+			content: url(../../../img/shape-triangle.svg);
+			position: absolute;
+			bottom: -65px;
+			right: -437px;
+			animation: rotate-end 15s linear infinite;
+		}
+	}
+}
+
+@keyframes rotate-end {
+	0% {
+		transform: rotate(0);
 	}
 
+	100% {
+		transform: rotate(-360deg);
+	}
 }
+
 .hero__text {
+	position: relative;
 	margin: 0;
 	margin-bottom: 1em;
 	font-size: 13px;
@@ -45,6 +64,36 @@
 	@media (min-width: @min-lg) {
 		grid-row-start: 4;
 		margin-bottom: 44px;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: -24px;
+		left: -5px;
+		width: 18px;
+		height: 18px;
+		background-image: url(.././../../img/shape-aquare.svg);
+		background-repeat: no-repeat;
+		background-size: contain;
+		animation: rotate 2s linear infinite;
+
+		@media (min-width: @min-lg) {
+			top: -40px;
+			left: -20px;
+			width: 37px;
+			height: 37px;
+		}
+	}
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0);
+	}
+
+	100% {
+		transform: rotate(360deg);
 	}
 }
 

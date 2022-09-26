@@ -1,7 +1,7 @@
 .left-lg {
 	max-width: 550px;
-	margin-left: auto;
 	margin-right: auto;
+	margin-left: auto;
 }
 
 .left-lg__title {
@@ -19,6 +19,7 @@
 
 		& b {
 			font-size: 18px;
+			display: block;
 		}
 	}
 }
@@ -33,6 +34,9 @@
 }
 
 .left-lg__subtitle {
+	position: relative;
+	box-sizing: border-box;
+	max-width: 285px;
 	margin: 0 0 24px;
 	padding-right: 76px;
 	font-weight: 700;
@@ -42,6 +46,10 @@
 	@media (min-width: @min-sm) {
 		font-size: 20px;
 		line-height: 28px;
+	}
+
+	@media (min-width: 610px) {
+		max-width: 550px;
 	}
 
 	@media (min-width: @min-lg) {

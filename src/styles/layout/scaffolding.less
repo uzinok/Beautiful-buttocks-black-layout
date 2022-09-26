@@ -84,3 +84,83 @@ img {
 .overflow {
 	overflow: hidden;
 }
+
+.animation-arrow-up {
+	position: absolute;
+	top: 0;
+	right: -10px;
+	width: 32px;
+	height: 42px;
+
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		top: 20px;
+		left: 0;
+		width: 17px;
+		height: 17px;
+		border-top: 2px solid var(--bright);
+		border-left: 2px solid var(--bright);
+		transform: rotate(45deg) translateY(-50%);
+		animation: animation-arrow-up 3s linear infinite;
+	}
+
+	&::after {
+		animation-delay: 1.5s;
+	}
+
+	&:last-child {
+		&::before {
+			animation-delay: 0.75s
+		}
+		&::after {
+			animation-delay: 2.25s
+		}
+	}
+
+	@media (min-width: @min-sm) {
+		width: 50px;
+		height: 70px;
+
+		&::before,
+		&::after {
+			width: 27px;
+			height: 27px;
+		}
+	}
+}
+
+@keyframes animation-arrow-up {
+	0% {
+		top: 30px;
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		top: -10px;
+		opacity: 0;
+	}
+}
+
+@media (min-width: @min-sm) {
+	@keyframes animation-arrow-up {
+		0% {
+			top: 70px;
+			opacity: 0;
+		}
+
+		50% {
+			opacity: 1;
+		}
+
+		100% {
+			top: 0;
+			opacity: 0;
+		}
+	}
+}
