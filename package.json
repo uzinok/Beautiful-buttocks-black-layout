@@ -24,6 +24,7 @@
 		"del": "^6.0.0",
 		"gulp": "^4.0.2",
 		"gulp-babel": "^8.0.0",
+		"gulp-group-css-media-queries": "^1.2.2",
 		"gulp-htmlmin": "^5.0.1",
 		"gulp-less": "^5.0.0",
 		"gulp-libsquoosh": "^1.0.12",

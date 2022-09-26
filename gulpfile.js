@@ -20,7 +20,7 @@ const notify = require('gulp-notify');
 const less = require('gulp-less');
 // const cleanCSS = require('gulp-clean-css');
 const autoprefixer = require('autoprefixer');
-// const gcmq = require('gulp-group-css-media-queries');
+const gcmq = require('gulp-group-css-media-queries');
 
 const postcss = require('gulp-postcss');
 const postLess = require('postcss-less');
@@ -119,6 +119,7 @@ function styles() {
 			errorHandler: onError
 		}))
 		.pipe(less())
+		.pipe(gcmq())
 		.pipe(postcss([
 			postMediaMinMax(),
 			csso(),
@@ -255,14 +256,60 @@ function createAvif() {
 }
 
 function sprite() {
-	return src(paths.img.resourceSvg + "/*.svg")
-		.pipe(svgSprite({
-			mode: {
-				stack: {
-					sprite: "../sprite.svg"
-				}
+	const config = {
+		shape: {
+			dimension: {
+				maxWidth: 500,
+				maxHeight: 500
 			},
-		}))
+			spacing: {
+				padding: 0
+			},
+			transform: [{
+				"svgo": {
+					"plugins": [{
+							removeViewBox: false
+						},
+						{
+							removeUnusedNS: false
+						},
+						{
+							removeUselessStrokeAndFill: true
+						},
+						{
+							cleanupIDs: false
+						},
+						{
+							removeComments: true
+						},
+						{
+							removeEmptyAttrs: true
+						},
+						{
+							removeEmptyText: true
+						},
+						{
+							collapseGroups: true
+						},
+						{
+							removeAttrs: {
+								attrs: '(fill|stroke|style)'
+							}
+						}
+					]
+				}
+			}]
+		},
+		mode: {
+			symbol: {
+				dest: '.',
+				sprite: 'sprite.svg'
+			}
+		}
+	};
+
+	return src(paths.img.resourceSvg + "/*.svg")
+		.pipe(svgSprite(config))
 		.pipe(dest(paths.img.src));
 }
 
