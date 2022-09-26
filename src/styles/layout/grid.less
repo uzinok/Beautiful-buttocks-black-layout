@@ -7,7 +7,7 @@ body::before {
 	bottom: 0;
 	left: 50%;
 	transform: translateX(-50%);
-	width: 100%;
+	width: 320px;
 	max-width: 1200px;
 	box-sizing: border-box;
 	// показываем границы
@@ -44,6 +44,7 @@ body::before {
 
 @media (min-width: 990px) {
 	body::before {
+		width: 100%;
 		// от края контента до первой колоки
 		--grid-sides: 40px;
 		// количество колонок

@@ -1,0 +1,59 @@
+.hero {
+	padding-bottom: 40px;
+	color: var(--white);
+	background-color: var(--dark);
+	background-image: url(../../../img/hero/bg-top.png), url(../../../img/hero/bg-end.png);
+	background-repeat: no-repeat;
+	background-position: center top, center bottom;
+
+	@media (min-width: 700px) {
+		background-image: url(../../../img/hero/bg-top@desktop.png), url(../../../img/hero/bg-end@desktop.png);
+	}
+
+	@media (max-width: @max-lg) {
+		&::after {
+			content: url(../../../img/hero/up/alina.png);
+			display: block;
+			width: fit-content;
+			margin: 0 auto;
+			transform: translateX(-66px);
+		}
+	}
+
+	@media (min-width: @min-lg) {
+
+		&::before {
+			content: url(../../../img/hero/up/alina@desktop.png);
+			position: absolute;
+			top: 0;
+			right: 50%;
+		}
+	}
+
+}
+.hero__text {
+	margin: 0;
+	margin-bottom: 1em;
+	font-size: 13px;
+	line-height: 18px;
+
+	@media (min-width: @min-sm) {
+		font-size: 14px;
+		line-height: 22px;
+	}
+
+	@media (min-width: @min-lg) {
+		grid-row-start: 4;
+		margin-bottom: 44px;
+	}
+}
+
+.hero__wrap {
+	padding-top: 16px;
+	padding-bottom: 34px;
+
+	@media (min-width: @min-lg) {
+		padding-top: 144px;
+		padding-bottom: 90px;
+	}
+}
