@@ -2,12 +2,12 @@
 	padding-bottom: 40px;
 	color: var(--white);
 	background-color: var(--dark);
-	background-image: url(../../../img/hero/bg-top.png), url(../../../img/hero/bg-end.png);
+	background-image: url(../../../img/hero/up/bg-content-left.png), url(../../../img/hero/up/bg-content-right.png), url(../../../img/hero/bg-top.png), url(../../../img/hero/bg-end.png);
 	background-repeat: no-repeat;
-	background-position: center top, center bottom;
+	background-position: left top, right top, center top, center bottom;
 
 	@media (min-width: 700px) {
-		background-image: url(../../../img/hero/bg-top@desktop.png), url(../../../img/hero/bg-end@desktop.png);
+		background-image: url(../../../img/hero/up/bg-content-left@desktop.png), url(../../../img/hero/up/bg-content-right@desktop.png), url(../../../img/hero/bg-top@desktop.png), url(../../../img/hero/bg-end@desktop.png);
 	}
 }
 
@@ -29,11 +29,12 @@
 			top: 0;
 			right: 50%;
 		}
+
 		&::after {
 			content: url(../../../img/shape-triangle.svg);
 			position: absolute;
-			bottom: -65px;
 			right: -437px;
+			bottom: -65px;
 			animation: rotate-end 15s linear infinite;
 		}
 	}
@@ -109,4 +110,21 @@
 
 .about-training__downstairs {
 	fill: var(--body);
+}
+
+.hero-training__downstairs svg {
+	fill: var(--body);
+	bottom: 0;
+
+	@media (min-width: 700px) {
+		bottom: 0;
+	}
+
+	@media (min-width: 990px) {
+		bottom: 0;
+	}
+
+	@media (min-width: 1920px) {
+		bottom: 0;
+	}
 }
