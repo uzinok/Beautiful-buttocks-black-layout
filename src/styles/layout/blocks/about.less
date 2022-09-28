@@ -11,21 +11,45 @@
 	}
 }
 
-.about__wrap {
-	& p:not(.about__subheading):not(.number-seats) {
+.about__text {
+	margin-bottom: 10px;
+
+	@media (min-width: @min-md) {
+		position: relative;
+		z-index: 1;
+		max-width: calc(50% - 25px);
+		margin-bottom: 90px;
+	}
+
+	p {
 		margin-top: 0;
 		font-size: 13px;
 		line-height: 18px;
 
 		@media (min-width: @min-md) {
-			position: relative;
-			z-index: 1;
-			max-width: calc(50% - 25px);
 			font-size: 16px;
 			line-height: 24px;
 		}
 	}
+
+	&::before {
+		content: url(../../../img/about/alina.png);
+		display: block;
+		width: fit-content;
+		margin: -128px auto 0;
+		transform: translateX(-10px);
+
+		@media (min-width: @min-md) {
+			content: url(../../../img/about/alina@desktop.png);
+			position: absolute;
+			bottom: -77px;
+			left: 100%;
+			margin: 0;
+			transform: none;
+		}
+	}
 }
+
 
 .about__heading {
 	margin-bottom: 18px;
@@ -38,34 +62,17 @@
 }
 
 .about__subheading {
+	max-width: 640px;
 	margin-top: 0;
 	margin-bottom: 20px;
+	margin-bottom: 25px;
 	font-weight: 700;
 	font-size: 14px;
 	line-height: 20px;
 
 	@media (min-width: @min-md) {
-		margin-bottom: 350px;
-	}
-
-	&::after {
-		content: url(../../../img/about/alina.png);
-		position: relative;
-		z-index: 1;
-		display: block;
-		width: fit-content;
-		margin: 0 auto 0;
-		margin-top: 66px;
-		transform: translateX(-10px);
-
-		@media (min-width: @min-md) {
-			position: absolute;
-			left: 50%;
-		}
-
-		@media (min-width: @min-lg) {
-			content: url(../../../img/about/alina@desktop.png);
-		}
+		font-size: 20px;
+		line-height: 28px;
 	}
 }
 
@@ -86,13 +93,14 @@
 }
 
 .about__list {
-	position: absolute;
-	top: 125px;
-	left: 0;
-	width: 998px;
+	& img {
+		max-width: none;
+		height: 159px;
+		width: auto;
 
-	@media (min-width: @min-lg) {
-		top: 270px;
+		@media (min-width: @min-lg) {
+			height: 309px;
+		}
 	}
 }
 
