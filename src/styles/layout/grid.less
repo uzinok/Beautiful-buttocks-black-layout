@@ -7,7 +7,8 @@ body::before {
 	bottom: 0;
 	left: 50%;
 	transform: translateX(-50%);
-	width: 320px;
+	// width: 320px;
+	width: 100%;
 	max-width: 1200px;
 	box-sizing: border-box;
 	// показываем границы
@@ -26,7 +27,7 @@ body::before {
 	// количество колонок
 	--grid-colums: 1;
 	// цвет колонок
-	--grid-color: rgba(255, 0, 0, 0.04);
+	--grid-color: rgba(255, 0, 0, 0.05);
 	// ширина колонки
 	--grid-column-width: calc((100% - var(--grid-gutter) * var(--grid-colums)) / var(--grid-colums));
 

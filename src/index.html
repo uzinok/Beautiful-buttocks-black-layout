@@ -366,19 +366,29 @@
 							<img src="img/hero/hero-text.png" alt="надпись 'Красивые ягодицы'" class="left-lg__img">
 						</picture>
 
-						<p class="left-lg__subtitle">Уникальная методика не имеющая аналогов в фитнес-индустрии</p>
+						<p class="left-lg__subtitle">
+							Уникальная методика не имеющая аналогов в фитнес-индустрии
+							<span class="animation-arrow-up"></span>
+							<span class="animation-arrow-up animation-arrow-up"></span>
+						</p>
 
-						<form action="#" class="form">
+						<form action="#" class="form__form">
 							<p class="form__notes">Заполни форму и получи подарок — <span class="bright">план питания на неделю</span> с простыми интересными рецептами блюд!</p>
 
-							<label for="name">Твое имя</label>
-							<input type="text" id="name" class="form__control">
+							<div class="form__control">
+								<input type="text" id="name" class="form__input" value="Валентина Сидоровна" placeholder="&nbsp;">
+								<label class="form__label" for="name">Твое имя</label>
+							</div>
 
-							<label for="phone">Телефон</label>
-							<input type="tel" id="phone" class="form__control">
+							<div class="form__control">
+								<input type="tel" id="phone" class="form__input" placeholder="&nbsp;">
+								<label class="form__label" for="phone">Телефон</label>
+							</div>
 
-							<label for="email">Электронная почта</label>
-							<input type="email" id="email" class="form__control">
+							<div class="form__control">
+								<input type="email" id="email" class="form__input" value="79093773553@ya.kz" placeholder="&nbsp;">
+								<label class="form__label" for="email">Электронная почта</label>
+							</div>
 
 							<div class="button-wrap">
 								<button type="submit" class="button">

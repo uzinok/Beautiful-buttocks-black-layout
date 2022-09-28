@@ -1,0 +1,117 @@
+.form {
+	padding-top: 40px;
+	color: var(--white);
+	background-color: var(--dark);
+	background-image: url(../../../img/hero/end/bg-content-left.png), url(../../../img/hero/end/bg-content-right.png), url(../../../img/hero/bg-end.png);
+	background-repeat: no-repeat;
+	background-position: left bottom, right bottom, center bottom;
+
+	@media (min-width: 700px) {
+		background-image: url(../../../img/hero/end/bg-content-left@desktop.png), url(../../../img/hero/end/bg-content-right@desktop.png), url(../../../img/hero/bg-end@desktop.png);
+	}
+
+	& div.button-wrap {
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+
+.form__form {
+	max-width: 600px;
+	margin-right: -10px;
+	margin-left: -10px;
+	padding: 20px;
+	background-color: #0d0c0e;
+
+	@media (min-width: 600px) {
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+
+.form__notes {
+	.hero__text();
+}
+
+.form__control {
+	display: flex;
+	flex-direction: column-reverse;
+	margin-bottom: 20px;
+}
+
+.form__label {
+	display: block;
+	font-weight: 900;
+	font-size: 11px;
+	line-height: 20px;
+	color: rgba(255, 255, 255, 0.4);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	transition: color var(--transition-duration) var(--transition-timing-function);
+
+	@media (min-width: @min-sm) {
+		font-size: 12px;
+	}
+}
+
+.form__input {
+	display: block;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 9px 18px;
+	font-size: 15px;
+	line-height: 28px;
+	font-family: inherit;
+	color: var(--bright);
+	background-color: rgba(255, 255, 255, 0.2);
+	background-clip: padding-box;
+	border: 2px solid rgba(255, 255, 255, 0.4);
+	transition: background-color var(--transition-duration) var(--transition-timing-function),
+		color var(--transition-duration) var(--transition-timing-function),
+		border var(--transition-duration) var(--transition-timing-function);
+
+	@media (min-width: @min-sm) {
+		padding: 14px 20px;
+		font-size: 18px;
+	}
+
+	&:focus {
+		color: var(--dark);
+		background-color: var(--white);
+		outline: 0;
+	}
+
+	&:not(:placeholder-shown) {
+		border-color: var(--bright);
+
+		& + .form__label {
+			color: var(--body);
+		}
+	}
+
+	&:invalid {
+		color: tomato;
+	}
+}
+
+@media (max-width: @max-lg) {
+	.form__wrap::after {
+		content: url(../../../img/hero/end/alina.png);
+		display: block;
+		width: fit-content;
+		margin: -16px auto 0;
+	}
+}
+
+@media (min-width: @min-lg) {
+	.form__wrap {
+		padding-bottom: 40px;
+
+		&::before {
+			content: url(../../../img/hero/end/alina@desktop.png);
+			position: absolute;
+			bottom: 0;
+			right: 40%;
+		}
+	}
+}
