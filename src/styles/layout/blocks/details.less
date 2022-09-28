@@ -1,0 +1,13 @@
+.details {
+	overflow: hidden;
+	transition: height var(--transition-duration) var(--transition-timing-function);
+}
+
+.details__content {
+	opacity: 0;
+	transition: opacity var(--transition-duration) var(--transition-timing-function);
+}
+
+.details--open .details__content {
+	opacity: 1;
+}
