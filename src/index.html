@@ -8,7 +8,7 @@
 	<title>Document</title>
 	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
 
-	<link rel="stylesheet" href="styles/main.min.css">
+	<link rel="stylesheet" href="styles/main.css">
 </head>
 
 <body>
@@ -426,7 +426,18 @@
 		</div>
 		<!-- ./overflow -->
 	</main>
+	<script>
+		function asyncCss(files) {
+			files.forEach(file => {
+				let link = document.createElement('link');
+				link.href = file;
+				link.rel = 'stylesheet';
+				document.head.append(link);
+			});
+		}
 
+		asyncCss(['styles/fonts.css', 'styles/keyframes.css']);
+	</script>
 	<script src="scripts/main.js"></script>
 
 	<div style="display: none;">

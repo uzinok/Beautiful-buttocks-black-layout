@@ -1,0 +1,95 @@
+@import './layout/variable.less';
+
+@keyframes bg-top {
+	0% {
+		background-position-y: 0;
+	}
+
+	100% {
+		background-position-y: -100%;
+	}
+}
+
+@keyframes bg-bottom {
+	0% {
+		background-position-y: 0;
+	}
+
+	100% {
+		background-position-y: 100%;
+	}
+}
+
+@keyframes bg-right {
+	0% {
+		background-position: 0 bottom;
+	}
+
+	100% {
+		background-position: -100% bottom;
+	}
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes rotate-end {
+	0% {
+		transform: rotate(0);
+	}
+
+	100% {
+		transform: rotate(-360deg);
+	}
+}
+
+@keyframes bg-left {
+	0% {
+		background-position: 0 bottom;
+	}
+
+	100% {
+		background-position: 47px bottom;
+	}
+}
+
+@keyframes animation-arrow-up {
+	0% {
+		top: 30px;
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		top: -10px;
+		opacity: 0;
+	}
+}
+
+@media (min-width: @min-sm) {
+	@keyframes animation-arrow-up {
+		0% {
+			top: 70px;
+			opacity: 0;
+		}
+
+		50% {
+			opacity: 1;
+		}
+
+		100% {
+			top: 0;
+			opacity: 0;
+		}
+	}
+}
