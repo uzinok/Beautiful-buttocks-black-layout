@@ -1,3 +1,4 @@
+// спойлеры, готовый плагин
 class Details {
 	constructor(details, transitionDuration) {
 		this._details = details;
@@ -54,3 +55,29 @@ if (document.querySelector('.details')) {
 		let details = new Details(elem, 300);
 	})
 }
+
+// скролл сертификатов
+
+const about = document.querySelector('.about');
+const scrollList = document.querySelector('.about__list');
+
+function elementInViewport(el) {
+	var top = el.offsetTop;
+	var height = el.offsetHeight;
+	while (el.offsetParent) {
+		el = el.offsetParent;
+		top += el.offsetTop;
+	}
+	return (
+		top < (window.pageYOffset + window.innerHeight) &&
+		(top + height) > window.pageYOffset
+	);
+}
+
+if (elementInViewport(scrollList))
+	scrollList.style.transform = 'translateX(-' + (scrollList.getBoundingClientRect().top / window.innerHeight * 100) + '%)';
+
+document.addEventListener('scroll', () => {
+	if (elementInViewport(scrollList))
+		scrollList.style.transform = 'translateX(-' + (scrollList.getBoundingClientRect().top / window.innerHeight * 100) + '%)';
+});
