@@ -96,10 +96,16 @@
 
 @media (max-width: @max-lg) {
 	.form__wrap::after {
-		content: url(../../../img/hero/end/alina.png);
+		content: '';
 		display: block;
-		width: fit-content;
+		width: 253px;
+		height: 329px;
 		margin: -16px auto 0;
+		background-image: url(../../../img/hero/end/alina.png);
+
+		@supports (background-image: url('../img/hero/end/alina.webp')) {
+			background-image: url(../../../img/hero/end/alina.webp);
+		}
 	}
 }
 
@@ -108,11 +114,19 @@
 		padding-bottom: 40px;
 
 		&::before {
-			content: url(../../../img/hero/end/alina@desktop.png);
+			content: '';
 			position: absolute;
 			right: 40%;
 			bottom: 0;
+			width: 846px;
+			height: 1101px;
+			background-image: url(../../../img/hero/end/alina@desktop.png);
+			background-repeat: no-repeat;
 			pointer-events: none;
+
+					@supports (background-image: url('../img/hero/end/alina@desktop.webp')) {
+			background-image: url(../../../img/hero/end/alina@desktop.webp);
+		}
 		}
 	}
 }

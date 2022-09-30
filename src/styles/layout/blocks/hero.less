@@ -14,20 +14,28 @@
 .hero__wrap {
 	@media (max-width: @max-lg) {
 		&::after {
-			content: url(../../../img/hero/up/alina.png);
+			content: '';
 			display: block;
-			width: fit-content;
+			width: 441px;
+			height: 272px;
 			margin: 0 auto;
+			background-image: url(../../../img/hero/up/alina.png);
+			background-repeat: no-repeat;
 			transform: translateX(-126px);
 		}
 	}
 
 	@media (min-width: @min-lg) {
 		&::before {
-			content: url(../../../img/hero/up/alina@desktop.png);
+			content: '';
 			position: absolute;
 			top: 0;
 			right: 50%;
+			width: 1467px;
+			height: 906px;
+			background-image: url(../../../img/hero/up/alina@desktop.png);
+			background-repeat: no-repeat;
+			pointer-events: none;
 		}
 
 		&::after {
@@ -36,6 +44,22 @@
 			right: -437px;
 			bottom: -65px;
 			animation: rotate-end 15s linear infinite;
+		}
+	}
+}
+
+@media (min-width: @min-lg) {
+	@supports (background-image: url('../img/hero/up/alina@desktop.webp')) {
+		.hero__wrap::before {
+			background-image: url('../../../img/hero/up/alina@desktop.webp');
+		}
+	}
+}
+
+@media (max-width: @max-lg) {
+	@supports (background-image: url('../img/hero/up/alina.webp')) {
+		.hero__wrap::after {
+			background-image: url('../../../img/hero/up/alina.webp');
 		}
 	}
 }
@@ -93,8 +117,8 @@
 }
 
 .hero-training__downstairs svg {
-	fill: var(--body);
 	bottom: -1px;
+	fill: var(--body);
 
 	@media (min-width: 700px) {
 		bottom: -1px;

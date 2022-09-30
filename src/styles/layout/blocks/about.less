@@ -33,23 +33,35 @@
 	}
 
 	&::before {
-		content: url(../../../img/about/alina.png);
+		content: '';
 		display: block;
-		width: fit-content;
+		width: 303px;
+		height: 365px;
 		margin: -128px auto 0;
+		background-image: url(../../../img/about/alina.png);
 		transform: translateX(-10px);
 
+		@supports (background-image: url('../img/about/alina.webp')) {
+			background-image: url(../../../img/about/alina.webp);
+		}
+
 		@media (min-width: @min-md) {
-			content: url(../../../img/about/alina@desktop.png);
+			content: '';
 			position: absolute;
 			bottom: -77px;
 			left: 100%;
+			width: 602px;
+			height: 730px;
 			margin: 0;
+			background-image: url(../../../img/about/alina@desktop.png);
 			transform: none;
+
+			@supports (background-image: url('../img/about/alina@desktop.webp')) {
+				background-image: url(../../../img/about/alina@desktop.webp);
+			}
 		}
 	}
 }
-
 
 .about__heading {
 	margin-bottom: 18px;
@@ -94,9 +106,9 @@
 
 .about__list {
 	& img {
+		width: auto;
 		max-width: none;
 		height: 159px;
-		width: auto;
 
 		@media (min-width: @min-lg) {
 			height: 309px;
