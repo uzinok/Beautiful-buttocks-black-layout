@@ -41,10 +41,6 @@
 		background-image: url(../../../img/about/alina.png);
 		transform: translateX(-10px);
 
-		@supports (background-image: url('../img/about/alina.webp')) {
-			background-image: url(../../../img/about/alina.webp);
-		}
-
 		@media (min-width: @min-md) {
 			content: '';
 			position: absolute;
@@ -55,10 +51,6 @@
 			margin: 0;
 			background-image: url(../../../img/about/alina@desktop.png);
 			transform: none;
-
-			@supports (background-image: url('../img/about/alina@desktop.webp')) {
-				background-image: url(../../../img/about/alina@desktop.webp);
-			}
 		}
 	}
 }
