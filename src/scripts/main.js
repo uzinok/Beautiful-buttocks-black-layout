@@ -99,7 +99,7 @@ const arrMount = ['января', 'февраля', 'марта', 'апреля'
 function timer(timer) {
 
 	// конечная дата
-	const deadline = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 19, 0, 0, 0);
+	const deadline = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate(), 19 - 3, 0, 0, 0));
 	// id таймера
 	let timerId = null;
 
