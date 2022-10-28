@@ -50,12 +50,6 @@ class Details {
 
 }
 
-if (document.querySelector('.details')) {
-	document.querySelectorAll('.details').forEach(elem => {
-		let details = new Details(elem, 300);
-	})
-}
-
 // скролл сертификатов
 
 const about = document.querySelector('.about');
@@ -82,6 +76,13 @@ document.addEventListener('scroll', () => {
 		scrollList.style.transform = 'translateX(-' + (scrollList.getBoundingClientRect().top / window.innerHeight * 100) + '%)';
 });
 
+window.addEventListener('load', function() {
+	if (document.querySelector('.details')) {
+		document.querySelectorAll('.details').forEach(elem => {
+			let details = new Details(elem, 300);
+		});
+	}
+});
 // таймер
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -127,11 +128,11 @@ function timer(timer) {
 
 		// добавить условия для вывода
 		if (date.getDate() == deadline.getDate() && date.getMonth() == deadline.getMonth()) {
-			$timerEndDate.textContent = 'сегодня в ' + leadingZero(deadline.getHours()) + ':' + leadingZero(deadline.getMinutes());
+			$timerEndDate.textContent = 'сегодня в ' + leadingZero(deadline.getHours()) + ':' + leadingZero(deadline.getMinutes()) + ' по МСК';
 		} else if (deadline.getDate() - date.getDate() == 1 && date.getMonth() == deadline.getMonth()) {
-			$timerEndDate.textContent = 'завтра в ' + leadingZero(deadline.getHours()) + ':' + leadingZero(deadline.getMinutes());
+			$timerEndDate.textContent = 'завтра в ' + leadingZero(deadline.getHours()) + ':' + leadingZero(deadline.getMinutes()) + ' по МСК';
 		} else {
-			$timerEndDate.textContent = deadline.getDate() + ' ' + arrMount[deadline.getMonth()] + ' в ' + leadingZero(deadline.getHours()) + ':' + leadingZero(deadline.getMinutes());
+			$timerEndDate.textContent = deadline.getDate() + ' ' + arrMount[deadline.getMonth()] + ' в ' + leadingZero(deadline.getHours()) + ':' + leadingZero(deadline.getMinutes()) + ' по МСК';
 		}
 
 	}
@@ -149,6 +150,6 @@ function timer(timer) {
 	const today = document.querySelectorAll('.today');
 
 	for (let i = 0; i < today.length; i++) {
-		today[i].textContent = deadline.getDate() + ' ' + arrMount[deadline.getMonth()] + ' в ' + leadingZero(deadline.getHours()) + ':' + leadingZero(deadline.getMinutes());
+		today[i].textContent = deadline.getDate() + ' ' + arrMount[deadline.getMonth()] + ' в ' + leadingZero(deadline.getHours()) + ':' + leadingZero(deadline.getMinutes()) + ' по МСК';
 	}
 }
