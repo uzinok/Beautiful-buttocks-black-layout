@@ -46,6 +46,12 @@
 			animation: rotate-end 15s linear infinite;
 		}
 	}
+
+	@media (min-width: @min-lg) and (max-width: @max-xl) {
+		&::before {
+			right: 55%;
+		}
+	}
 }
 
 .hero__text {
@@ -61,7 +67,7 @@
 	}
 
 	@media (min-width: @min-lg) {
-		grid-row-start: 4;
+		grid-row-start: 5;
 		margin-bottom: 44px;
 	}
 
@@ -114,5 +120,17 @@
 
 	@media (min-width: 1920px) {
 		bottom: -1px;
+	}
+}
+
+.hero__timer {
+	@media (min-width: @min-lg) {
+		margin-top: -105px;
+	}
+}
+
+.hero__timer {
+	@media (max-width: @max-lg) {
+		margin-bottom: 10px;
 	}
 }
